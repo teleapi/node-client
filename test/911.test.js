@@ -9,6 +9,8 @@ describe('E911', function() {
         nock("https://apiv1.teleapi.net")
             .post('/911/create')
             .reply(200, response.create)
+            .post('/911/list')
+            .reply(200, response.fetch_list)
             .post('/911/info')
             .reply(200, response.info)
             .post('/911/update')
@@ -44,6 +46,14 @@ describe('E911', function() {
             assert.equal(resp.code, 200);
             assert.equal(resp.data.id, 42);
             assert.equal(resp.data.did_number, 5555555555);
+            done();
+        });
+    });
+
+    it('should fetch a list of 911 info', function(done) {
+        E911.fetch_list(undefined, function(resp) {
+            assert.equal(resp.code, 200);
+            assert.equal(resp.data.length, 2);
             done();
         });
     });
@@ -92,7 +102,7 @@ describe('E911', function() {
     });
 
     describe("Alert Groups", function() {
-        
+
         beforeEach(() => {
             nock('https://apiv1.teleapi.net')
                 .post('/911/groups/create')

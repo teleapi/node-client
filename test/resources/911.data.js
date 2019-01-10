@@ -35,6 +35,40 @@ module.exports = {
             modify_dt: "2016-02-05 12:22:06"
         }
     },
+    fetch_list: {
+        code: 200,
+        status: "success",
+        data: [
+            {
+                id: 42,
+                did_id: 15,
+                did_number: 5555555555,
+                full_name: "Bob McFrob",
+                address: "333 Some Street",
+                city: "Englewood",
+                state: "CO",
+                zip: "80112",
+                unit_type: "SUITE",
+                unit_number: "16B",
+                create_dt: "2016-02-05 12:22:06",
+                modify_dt: "2016-02-05 12:22:06"
+            },
+            {
+                id: 42,
+                did_id: 15,
+                did_number: 5555555555,
+                full_name: "Bob McFrob",
+                address: "333 Some Street",
+                city: "Englewood",
+                state: "CO",
+                zip: "80112",
+                unit_type: "SUITE",
+                unit_number: "16B",
+                create_dt: "2016-02-05 12:22:06",
+                modify_dt: "2016-02-05 12:22:06"
+            }
+        ]
+    },
     update: {
         code: 200,
         status: "success",
